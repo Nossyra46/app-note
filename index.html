@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="appNote">
+<head>
+	<meta charset="UTF-8">
+	<title>Application Note</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script src="bower_components/angular/angular.min.js"></script>
+</head>
+<body id="body" ng-controller="noteCtrl">
+	<h1> Note: </h1>
+	<textarea ng-model="text" rows="7" cols="70"></textarea>
+	<br>
+	<button class="btn btn-primary" ng-click="save()"> Enregistrer </button>
+	<button class="btn btn-primary" ng-click="erase()" ng-model="effacer"> Effacer </button>
+
+	<p> Nombre de caractères restant: {{ 100 - text.length }} </p>
+	<p class="alert" ng-class="{'alert-warning': status===1, 'alert-danger': status===2, 'alert-success': status===3}" ng-model="memory"> {{memory}} </p>
+
+	<script src="script.js"></script>
+</body>
+</html>
